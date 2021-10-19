@@ -14,6 +14,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new UnityEngine.Vector3((Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime), 0, (Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime)));
+        transform.Translate(new UnityEngine.Vector3((Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime), Input.GetAxis("Jump") * movementSpeed * Time.deltaTime, (Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime)));
     }
 }
