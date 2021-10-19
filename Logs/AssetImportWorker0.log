@@ -2944,3 +2944,11 @@ Received Import Request.
 Start importing Assets/Scripts/ClickMovement.cs using Guid(7c17ad9730fde3245820d42f143922e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9d6873cf51e549882014ed16ab0114b') in 0.010429 seconds 
   Import took 0.013852 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 273.651458 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(f4130ad2f1c814149868a8eeec3754ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(f4130ad2f1c814149868a8eeec3754ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '661c9c56f23af556ec04a0af6c9f96cf') in 0.007128 seconds 
+  Import took 0.009652 seconds .
+
