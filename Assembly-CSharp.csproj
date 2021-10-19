@@ -37,14 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ClickMovement.cs" />
-     <Compile Include="Assets\Scripts\Movement.cs" />
-     <Compile Include="Assets\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
-     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />
-     <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
-     <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
-     <None Include="Assets\Rocks and Boulders 2\Shaders\shader info.txt" />
+     <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\Test.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
