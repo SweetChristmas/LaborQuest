@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 259fa6d1c1d85624fb97d26d7098b6e0, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 3f4c74d06d3bd6c469e7107823bed5a4, type: 2}
 --- !u!1 &155655070
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 206540791}
   - component: {fileID: 206540790}
   - component: {fileID: 206540789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,13 +285,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206540788}
-  m_LocalRotation: {x: -0.00009034181, y: 0.0019845988, z: -0.001980153, w: 0.99999607}
-  m_LocalPosition: {x: 0.3435735, y: 0.16544056, z: -0.6094084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 785051434}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.01, y: 0.227, z: -0.227}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289140707
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,13 +770,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785051433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3435735, y: -0.16544056, z: 0.6094084}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 206540792}
   - {fileID: 1685003079}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &937953766
 GameObject:
@@ -793,7 +793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &937953767
 Transform:
   m_ObjectHideFlags: 0
@@ -922,6 +922,7 @@ GameObject:
   - component: {fileID: 1266366438}
   - component: {fileID: 1266366439}
   - component: {fileID: 1266366440}
+  - component: {fileID: 1266366433}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -929,6 +930,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1266366433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266366432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e565251a71e60440921d79828956dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &1266366434
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -991,7 +1004,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266366432}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 3252224991405807402, guid: 0e4c912f84cbfaa478f458517a722ef5, type: 3}
 --- !u!4 &1266366437
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,10 +1014,10 @@ Transform:
   m_GameObject: {fileID: 1266366432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1266366438
 Rigidbody:
@@ -1056,8 +1069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c17ad9730fde3245820d42f143922e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNavMeshAgent: {fileID: 1266366439}
-  playerCamera: {fileID: 963194227}
+  focus: {fileID: 0}
+  movementMask:
+    serializedVersion: 2
+    m_Bits: 512
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1685003078 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f282d9fb9b399dd4384b20aba08642fb, type: 3}
@@ -1080,7 +1098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580b1a3eb12d836469ec1839586df48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2.5
+  radius: 2.6
+  interactionTransform: {fileID: 1685003079}
 --- !u!1 &1801009728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,8 +1188,12 @@ PrefabInstance:
       value: Rock3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f282d9fb9b399dd4384b20aba08642fb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f282d9fb9b399dd4384b20aba08642fb, type: 3}
       propertyPath: m_NavMeshLayer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f282d9fb9b399dd4384b20aba08642fb, type: 3}
       propertyPath: m_StaticEditorFlags
