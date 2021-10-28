@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RockInteractable : Interactable
-{
-    Transform player;
+{   Interactable interactable;
+    Inventory playerInventory;
+    public Item _item;
+    void Start() {
+        playerInventory = GameObject.Find("Player").GetComponent<Inventory>();
+
+    }
     public override void Interact() {
         Debug.Log("I'm a rock");
-        Debug.Log(player);
+        playerInventory.Add(_item);
     }
 }

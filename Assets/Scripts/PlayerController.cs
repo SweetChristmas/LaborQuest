@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0)) {
+        if(Input.GetMouseButtonUp(0)) {
             Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 100, movementMask);
@@ -35,8 +35,12 @@ public class PlayerController : MonoBehaviour
             // }
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             if(interactable != null) {
+                RemoveFocus();
                 SetFocus(interactable);
-            } else {
+            }else if (EventSystem.current.IsPointerOverGameObject()) {
+                Debug.Log("UI");
+            }
+             else {
                 RemoveFocus();
                 motor.MoveToPoint(hit.point);
             }
@@ -58,6 +62,7 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+        
         focus = interactable;
         interactable.OnFocused(transform);
         motor.FollowTarget(focus);

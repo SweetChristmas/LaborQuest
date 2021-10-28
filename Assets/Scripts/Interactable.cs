@@ -1,18 +1,18 @@
 
+using System.Collections;
 using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public float radius = 3f;
     bool isFocus = false;
     bool hasInteracted = false;
-    Transform player;
+    Transform _player;
     public Transform interactionTransform;
     void Update() {
-        if(isFocus && !hasInteracted) {
-            float distance = Vector3.Distance(player.position, transform.position);
-            if(distance <= radius) {
-                Interact();
-                hasInteracted = true;
+        if(isFocus && hasInteracted == false) {
+            float distance = Vector3.Distance(_player.position, transform.position);
+            if(distance <= radius && hasInteracted == false) {
+                StartCoroutine("Interaction");
             }
         }
     }
@@ -22,17 +22,24 @@ public class Interactable : MonoBehaviour
     }
     public void OnFocused(Transform playerTransform) {
         isFocus = true;
-        player = playerTransform;
+        _player = playerTransform;
         hasInteracted = false;
     }
 
     public void OnDefocused() {
+        Debug.Log("Defocused");
         hasInteracted = false;
         isFocus = false;
-        player = null;
+        _player = null;
     }
     public virtual void Interact() {
         // This method is meant to be overwritten
          Debug.Log("Interacting with " + transform.name);
+    }
+    IEnumerator Interaction() {
+        Debug.Log("interacting now");
+        hasInteracted = true;
+        Interact();
+        yield return null;
     }
 }
