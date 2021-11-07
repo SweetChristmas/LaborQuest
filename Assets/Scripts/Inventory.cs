@@ -15,30 +15,18 @@ public class Inventory : MonoBehaviour
         inventorySlots = parentElement.GetComponentsInChildren<InventorySlot>();
     }
     public void Add (Item item) {
-        // items.Add(item);
-        Debug.Log("Adding");
-        var hasGrabbed = false;
         for(var a = 0; a < inventorySlots.Length; a++) {
             var currentSlot = inventorySlots[a];
-            Debug.Log("What is happening");
-            Debug.Log(hasGrabbed);
-            if(item.isStackable && hasGrabbed == false) {
+            if(item.isStackable) {
                 if(currentSlot.GetItem().name == item.name) {
                     currentSlot.SetItemAmount(currentSlot.GetItem().amount + item.amount);
-                    hasGrabbed = true;
                     break;
                 }
             }
-            else if(currentSlot.GetItem() == null && hasGrabbed == false) {
-                // Debug.Log(currentSlot);
+            else if(currentSlot.GetItem() == null) {
                 currentSlot.SetItem(item);
-                hasGrabbed = true;
-                Debug.Log("Closing");
                 break;
-            
-
             }
-            Debug.Log(currentSlot);
         }
 
     }

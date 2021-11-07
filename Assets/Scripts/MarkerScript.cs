@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MarkerScript : MonoBehaviour
 {
     private RectTransform parentTransform;
     private RectTransform currentTransform;
+    private Inventory _inv;
     public RectTransform successZone;
     public RectTransform failureZone;
     public float successWidth;
     public float failureWidth;
+    public Text messageDisplay;
+    public Item createdItem;
     private Vector3 originalPosition;
     private Vector3 endingPosition;
     // Start is called before the first frame update
     void Start()
     {
+        _inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+
         currentTransform = transform.GetComponent<RectTransform>();
         parentTransform = transform.parent.GetComponent<RectTransform>();
 
@@ -39,13 +45,15 @@ public class MarkerScript : MonoBehaviour
     }
 
     public void CheckSuccess() {
+        Debug.Log(_inv);
         if(transform.localPosition.x >= parentTransform.rect.width / 2 - successWidth) {
-            Debug.Log("success");
+            messageDisplay.text = "Success!";
+            _inv.Add(createdItem);
         } else if (transform.localPosition.x < -parentTransform.rect.width / 2 + failureWidth) {
-            Debug.Log("failure");
+            messageDisplay.text = "You failed.";
+            _inv.Add(createdItem);
         } else {
-            Debug.Log(transform.localPosition.x);
-            Debug.Log("mediocre");
+            messageDisplay.text = "Meh.";
         }
     }
 }
