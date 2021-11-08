@@ -1111,11 +1111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2636271489842592829, guid: a0ea631194f30c04e96d7dab80df5cd7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2636271489842592829, guid: a0ea631194f30c04e96d7dab80df5cd7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2636271489842592829, guid: a0ea631194f30c04e96d7dab80df5cd7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1936,6 +1936,7 @@ GameObject:
   - component: {fileID: 1607455434}
   - component: {fileID: 1607455433}
   - component: {fileID: 1607455435}
+  - component: {fileID: 1607455436}
   m_Layer: 5
   m_Name: Mining Screen
   m_TagString: Untagged
@@ -2015,6 +2016,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1607455436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607455431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354f6b6d707e5c44ab89b5c31b882bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1615512799
 GameObject:
   m_ObjectHideFlags: 0
