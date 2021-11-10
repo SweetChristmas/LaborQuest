@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Location
+[CreateAssetMenu(fileName = "Location", menuName = "Entities/Location", order = 0)]
+public class Location : ScriptableObject
 {
-    public string name {get; set;}
-    public string skill {get; set;}
+    new public string name;
+    public Skill skill;
+    public List<Drop> drops;
 }

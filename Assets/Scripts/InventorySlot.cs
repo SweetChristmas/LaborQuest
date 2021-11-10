@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     Image image;
-    Item item;
+    PlayerItem item;
 
     void Start() {
         item = null;
         image = GetComponent<Image>();
     }
 
-    public Item GetItem() {
+    public PlayerItem GetItem() {
         return item;
     }
-    public void SetItem(Item _item) {
+    public void SetItem(PlayerItem _item) {
         var tempColor = image.color;
         tempColor.a = 1f;
         image.color = tempColor;

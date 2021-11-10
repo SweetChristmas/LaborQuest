@@ -13,7 +13,7 @@ public class MarkerScript : MonoBehaviour
     public float successWidth;
     public float failureWidth;
     public Text messageDisplay;
-    public Item createdItem;
+    public PlayerItem createdItem;
     private Vector3 originalPosition;
     private Vector3 endingPosition;
     // Start is called before the first frame update

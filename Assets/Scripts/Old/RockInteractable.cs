@@ -5,7 +5,7 @@ using UnityEngine;
 public class RockInteractable : Interactable
 {   Interactable interactable;
     Inventory playerInventory;
-    public Item _item;
+    public PlayerItem _item;
     void Start() {
         playerInventory = GameObject.Find("Player").GetComponent<Inventory>();
 

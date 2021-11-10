@@ -40,17 +40,24 @@
      <Compile Include="Assets\Scripts\Old\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Old\CameraScript.cs" />
      <Compile Include="Assets\Scripts\InventorySlot.cs" />
-     <Compile Include="Assets\Scripts\Classes\Item.cs" />
+     <Compile Include="Assets\Scripts\Classes\PlayerItem.cs" />
      <Compile Include="Assets\Scripts\MarkerScript.cs" />
      <Compile Include="Assets\Scripts\Old\PlayerMotor.cs" />
+     <Compile Include="Assets\Scripts\Old\Item1.cs" />
      <Compile Include="Assets\Scripts\Classes\Ore.cs" />
      <Compile Include="Assets\Scripts\MiningScript.cs" />
      <Compile Include="Assets\Scripts\Classes\Player.cs" />
+     <Compile Include="Assets\Scripts\Classes\Drop.cs" />
      <Compile Include="Assets\Scripts\Old\Interactable.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
+     <Compile Include="Assets\Scripts\Classes\Skill.cs" />
+     <Compile Include="Assets\Scripts\Old\Inventory_old.cs" />
      <Compile Include="Assets\Scripts\Classes\Location.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\Old\RockInteractable.cs" />
+     <Compile Include="Assets\Scripts\Classes\Item.cs" />
+     <Compile Include="Assets\Scripts\JSONScript.cs" />
+     <Compile Include="Assets\Scripts\Classes\Items.cs" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
      <None Include="Assets\Ludiq\Assemblies\Bolt.State.Runtime.xml" />
@@ -77,6 +84,7 @@
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.Client.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.Design.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Runtime.Remoting.xml" />
+     <None Include="Assets\JsonDotNet\link.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Xml.Linq.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Utilities.v3.5.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Conversion.v3.5.xml" />
@@ -252,7 +260,7 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
+        <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsNativeModule">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
@@ -327,7 +335,7 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIElementsModule">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEditor.UIElementsModule.dll</HintPath>
+        <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIElementsSamplesModule">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
@@ -339,49 +347,52 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\YamlDotNet.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.State.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.State.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Core.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.Core.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Graphs.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Graphs.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Graphs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Core.Runtime">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.Core.Runtime.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Antlr3.Runtime.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Graphs.Runtime">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Graphs.Runtime.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Graphs.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Platforms">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Platforms.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Platforms.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ionic.Zip.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Flow.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.Flow.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Core.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Core.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Flow.Runtime">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.Flow.Runtime.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.Flow.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="MiscUtil">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\MiscUtil.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\MiscUtil.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Core.Runtime">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Core.Runtime.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Ludiq.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.State.Runtime">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.State.Runtime.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\Ludiq\Assemblies\Bolt.State.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Assets\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -728,47 +739,35 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TextCoreTextEngineModule">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.TextCoreTextEngineModule">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UIBuilderModule">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEditor.UIBuilderModule.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsInputSystemModule">
-        <HintPath>C:\Users\Nitsu\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEngine.UIElementsInputSystemModule.dll</HintPath>
+        <HintPath>C:\Users\Austin\Documents\Projects\LaborQuest\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

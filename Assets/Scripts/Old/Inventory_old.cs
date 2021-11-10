@@ -9,12 +9,12 @@ public class InventoryOld : MonoBehaviour
 {
     public Transform parentElement;
     public InventorySlot[] inventorySlots;
-    public List<Item> items = new List<Item>();
+    public List<PlayerItem> items = new List<PlayerItem>();
     // Start is called before the first frame update
     void Start() {
         inventorySlots = parentElement.GetComponentsInChildren<InventorySlot>();
     }
-    public void Add (Item item) {
+    public void Add (PlayerItem item) {
         // items.Add(item);
         Debug.Log("Adding");
         var hasGrabbed = false;
@@ -42,7 +42,7 @@ public class InventoryOld : MonoBehaviour
         }
 
     }
-    public void Remove(Item item) {
+    public void Remove(PlayerItem item) {
         items.Remove(item);
     }
 }

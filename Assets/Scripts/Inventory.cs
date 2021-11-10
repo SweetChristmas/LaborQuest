@@ -9,12 +9,12 @@ public class Inventory : MonoBehaviour
 {
     public Transform parentElement;
     public InventorySlot[] inventorySlots;
-    public List<Item> items = new List<Item>();
+    public List<PlayerItem> items = new List<PlayerItem>();
     // Start is called before the first frame update
     void Start() {
         inventorySlots = parentElement.GetComponentsInChildren<InventorySlot>();
     }
-    public void Add (Item item) {
+    public void Add (PlayerItem item) {
         for(var a = 0; a < inventorySlots.Length; a++) {
             var currentSlot = inventorySlots[a];
             if(item.isStackable) {
@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
         }
 
     }
-    public void Remove(Item item) {
+    public void Remove(PlayerItem item) {
         items.Remove(item);
     }
 }

@@ -1,0 +1,18 @@
+{
+  "Items": [
+    {
+      "id": 1,
+      "name": "iron ore",
+      "amount": 1,
+      "value": 2,
+      "isStackable": false
+    },
+    {
+      "id": 2,
+      "name": "coal",
+      "amount": 1,
+      "value": 1,
+      "isStackable": false
+    }
+  ]
+}

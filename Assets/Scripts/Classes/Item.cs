@@ -1,14 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "Item", menuName = "Inventory/Item", order = 0)]
-public class Item : ScriptableObject {
-    
+[System.Serializable]
+public class Item
+{
     public int id;
-    public int amount = 1;
-    public float quality;
-    new public string name = "New Item";
-    public Sprite icon = null;
-    public bool isStackable = false;
+    public string name;
+    public float value;
+    public bool isStackable;
+
 }
